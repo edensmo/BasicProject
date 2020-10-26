@@ -5,6 +5,6 @@ npm i
 npm start dev
 
 To run client side :
-npm i
 cd client-side
+npm i
 npm run start
