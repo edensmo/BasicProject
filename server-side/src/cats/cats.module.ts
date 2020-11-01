@@ -1,7 +1,9 @@
-import { Module } from '@nestjs/common';
+import { CorsMiddleware } from '@nest-middlewares/cors';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CatsController } from './cats.controller';
 import { CatsService } from './cats.service';
+// import { LoggerMiddleware } from './logger.middleware';
 import { Cat, CatSchema } from './schemas/cat.schema';
 
 @Module({
@@ -9,4 +11,8 @@ import { Cat, CatSchema } from './schemas/cat.schema';
   controllers: [CatsController],
   providers: [CatsService],
 })
-export class CatsModule {}
+export class CatsModule {
+  // configure(consumer: MiddlewareConsumer) {
+  //   consumer.apply(CorsMiddleware,LoggerMiddleware).forRoutes(CatsController);
+  // }
+}
