@@ -37,7 +37,11 @@ export default ({ cats = [], onCreateNewCat }) => {
         <p>My cat:</p>
         <ul>
           {cats.map((cat) => (
-            <li key={cat.name}>{cat.name}</li>
+            <li key={cat.name}>
+              {cat.name}
+              <div>age: {cat.age}</div>
+              <div>breed: {cat.breed}</div>
+            </li>
           ))}
         </ul>
       </section>

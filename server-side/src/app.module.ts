@@ -2,7 +2,7 @@ import { MiddlewareConsumer, Module } from '@nestjs/common';
 // import { TasksModule } from './tasks/tasks.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CatsModule } from './cats/cats.module';
-import { LoggerMiddleware } from './cats/logger.middleware';
+// import { LoggerMiddleware } from './cats/logger.middleware';
 
 @Module({
   imports: [
