@@ -1,4 +1,4 @@
-import { CorsMiddleware } from '@nest-middlewares/cors';
+// import { CorsMiddleware } from '@nest-middlewares/cors';
 import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CatsController } from './cats.controller';

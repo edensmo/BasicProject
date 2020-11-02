@@ -1,0 +1,12 @@
+.cat-box {
+  margin: 1rem;
+  box-shadow: none;
+  background-color: rgb(230, 230, 222);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.name-cat {
+  margin: 0.5rem;
+  color: rgb(214, 87, 155);
+  font-size: large;
+}
