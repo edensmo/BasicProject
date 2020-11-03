@@ -1,18 +1,15 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-export type CatDocument = Cat & Document;
+export type TaskDocument = Task & Document;
 
 @Schema()
-export class Cat {
+export class Task {
   @Prop({ required: true })
   name: string;
 
   @Prop()
-  age: number;
-
-  @Prop()
-  breed: string;
+  description: string;
 }
 
-export const CatSchema = SchemaFactory.createForClass(Cat);
+export const TaskSchema = SchemaFactory.createForClass(Task);
