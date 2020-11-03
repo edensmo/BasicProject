@@ -61,3 +61,7 @@ button:active {
 .cat-list-section {
   padding: 30px;
 }
+
+.my-cat {
+  font-size: 2rem;
+}
