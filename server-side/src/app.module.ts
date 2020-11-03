@@ -1,19 +1,16 @@
-import { MiddlewareConsumer, Module } from '@nestjs/common';
-// import { TasksModule } from './tasks/tasks.module';
+import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CatsModule } from './cats/cats.module';
-// import { LoggerMiddleware } from './cats/logger.middleware';
+import { TasksModule } from './tasks/tasks.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot(
-      'mongodb+srv://Admin:Aa123456@cluster0.si7to.mongodb.net/cats?retryWrites=true&w=majority',
+      'mongodb+srv://Admin:Aa123456@cluster0.si7to.mongodb.net/tasks?retryWrites=true&w=majority',
     ),
     CatsModule,
+    TasksModule
   ],
 })
 
-// @Module({
-//   imports: [TasksModule]
-// })
 export class AppModule {}
