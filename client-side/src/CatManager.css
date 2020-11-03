@@ -1,6 +1,7 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 1px 1fr;
+  justify-content: flex-start;
+  grid-template-columns: 1fr 1px 4fr;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 10px;
 }
@@ -60,6 +61,12 @@ button:active {
 
 .cat-list-section {
   padding: 30px;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .my-cat {
