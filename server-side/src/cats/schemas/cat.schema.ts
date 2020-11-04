@@ -15,4 +15,17 @@ export class Cat {
   breed: string;
 }
 
+
+@Schema()
+export class Task {
+  @Prop({ required: true })
+  name: string;
+
+  @Prop()
+  age: number;
+
+  @Prop()
+  breed: string;
+}
+
 export const CatSchema = SchemaFactory.createForClass(Cat);
