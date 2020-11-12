@@ -2,6 +2,7 @@ import "./App.css";
 import axios from "axios";
 import React, { useState, useCallback, useEffect } from "react";
 import CatManager from "./CatManager";
+import Task from "./task/Task";
 
 const myCatServerBaseURL = "http://localhost:3000";
 
@@ -46,9 +47,14 @@ const App = () => {
   );
 
   return (
-    <main className="u-centered-content u-full-vw u-full-vh">
-      <CatManager cats={cats} onCreateNewCat={onCreateNewCat} />
-    </main>
+    // <div>
+    //   <main className="u-centered-content u-full-vw u-full-vh">
+    //     <CatManager cats={cats} onCreateNewCat={onCreateNewCat} />
+    //   </main>
+    <div>
+      <Task></Task>
+      {/* </div> */}
+    </div>
   );
 };
 
