@@ -4,20 +4,15 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "${workspaceFolder}/server-side/node_modules/**/*.js",
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}/server-side/src/main.ts",
-            "preLaunchTask": "tsc: watch - tsconfig.build.json",
-            "outFiles": [
-                "${workspaceFolder}/server-side/dist/**/*.js"
-            ]
+            "name": "Debug Nest Framework",
+            "args": ["${workspaceFolder}/server-side/src/main.ts"],
+            "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}/server-side",
+            "protocol": "inspector"
         }
     ]
 }
