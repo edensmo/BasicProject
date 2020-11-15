@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CatsModule } from './cats/cats.module';
+import { MembersModule } from './members/members.module';
 import { TasksModule } from './tasks/tasks.module';
 
 @Module({
@@ -9,7 +10,8 @@ import { TasksModule } from './tasks/tasks.module';
       'mongodb+srv://Admin:Aa123456@cluster0.si7to.mongodb.net/tasks?retryWrites=true&w=majority',
     ),
     CatsModule,
-    TasksModule
+    TasksModule,
+    MembersModule
   ],
 })
 
