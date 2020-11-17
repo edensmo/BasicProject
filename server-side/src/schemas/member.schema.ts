@@ -13,7 +13,6 @@ export class Member {
 
   @Prop({ required: true })
   password: string;
-
 }
 
 export const MemberSchema = SchemaFactory.createForClass(Member);

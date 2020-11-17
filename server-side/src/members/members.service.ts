@@ -7,16 +7,20 @@ import { Model } from 'mongoose';
 
 @Injectable()
 export class MembersService {
-    constructor(@InjectModel(Member.name) private readonly memberModel: Model<Member>) {}
+  constructor(
+    @InjectModel(Member.name) private readonly memberModel: Model<Member>,
+  ) {}
 
-    getAllMembers() : Member[] {
-        return this.memberModel.find().exec();
-    }
+  getAllMembers(): Member[] {
+    return this.memberModel.find().exec();
+  }
 
-    async create(createMemberDto: CreateMemberDto): Promise<Member> {
-        const createdMember = new this.memberModel(createMemberDto);
-        return createdMember.save();
-      }
+  getMember(email: string): Member[] {
+    return this.memberModel.findOne({ email: email }).exec();
+  }
 
-
+  async create(createMemberDto: CreateMemberDto): Promise<Member> {
+    const createdMember = new this.memberModel(createMemberDto);
+    return createdMember.save();
+  }
 }
