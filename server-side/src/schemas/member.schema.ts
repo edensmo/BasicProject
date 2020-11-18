@@ -8,11 +8,14 @@ export class Member {
   @Prop({ required: true })
   name: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true, uniqe: true })
   email: string;
 
   @Prop({ required: true })
   password: string;
+
+  @Prop()
+  token: string;
 }
 
 export const MemberSchema = SchemaFactory.createForClass(Member);

@@ -8,11 +8,11 @@ import { TasksModule } from './tasks/tasks.module';
   imports: [
     MongooseModule.forRoot(
       'mongodb+srv://Admin:Aa123456@cluster0.si7to.mongodb.net/tasks?retryWrites=true&w=majority',
+      { useCreatIndex: true },
     ),
     CatsModule,
     TasksModule,
-    MembersModule
+    MembersModule,
   ],
 })
-
 export class AppModule {}

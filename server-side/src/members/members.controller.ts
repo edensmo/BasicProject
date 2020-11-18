@@ -12,6 +12,7 @@ import { MembersService } from './members.service';
 import { Member } from '../schemas/member.schema';
 import { CreateMemberDto } from './dto/create-member.dto';
 import { get } from 'http';
+const jwt = require('jsonwebtoken');
 
 @Controller('member')
 export class MembersController {
@@ -43,8 +44,32 @@ export class MembersController {
     return 'the password not true';
   }
 
+  @Post('/login')
+  async login(@Body() userLogin: any) {
+    console.log(userLogin);
+    try {
+      const user = await this.membersService.getMember(userLogin.email);
+      console.log(user);
+      if (!user) {
+        return 'Incorrect email or password';
+      }
+      const token = jwt.sign({ user }, 'ahuvia', { expiresIn: '30m' });
+
+      return JSON.stringify({ user, token });
+    } catch (err) {
+      return 'error';
+    }
+  }
+
   @Post()
   async create(@Body() createMemberDto: CreateMemberDto) {
-    await this.membersService.create(createMemberDto);
+    const user: any = this.membersService.getMember(createMemberDto.email);
+    console.log(user);
+    if (user.email == createMemberDto.email) {
+      return 'Email exist';
+    } else {
+      await this.membersService.create(createMemberDto);
+      return 'welcome';
+    }
   }
 }
