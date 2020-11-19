@@ -55,7 +55,7 @@ export class MembersController {
       }
       const token = jwt.sign({ user }, 'ahuvia', { expiresIn: '30m' });
 
-      return JSON.stringify({ user, token });
+      return { user, token };
     } catch (err) {
       return 'error';
     }

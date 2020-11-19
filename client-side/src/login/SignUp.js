@@ -1,12 +1,10 @@
 import { useCallback, useState } from "react";
 import "./Login.css";
 import axios from "axios";
-import { Link, Router, BrowserRouter, Route } from "react-router-dom";
-import SignUp from "./SignUp";
 
 const myServerBaseURL = "http://localhost:3000";
 
-const Login = () => {
+const SignUp = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -24,16 +22,17 @@ const Login = () => {
     setEmail(event.target.value);
   }, []);
 
-  const login = async (event) => {
+  const signUp = async (event) => {
     event.preventDefault();
 
     const data = {
+      name: name,
       email: email,
       password: password,
     };
 
     await axios
-      .post(`${myServerBaseURL}/member/login`, data)
+      .post(`${myServerBaseURL}`, data)
       .then((result) => {
         console.log("result", result);
         localStorage.setItem(
@@ -48,37 +47,38 @@ const Login = () => {
       .catch((err) => {
         console.log(err);
       });
-
+    setName("");
     setPassword("");
     setEmail("");
   };
 
   return (
-    <BrowserRouter>
-      <div>
-        <form>
-          <input
-            type="email"
-            placeholder="email"
-            value={email}
-            onChange={emailChange}
-          />
-          <input
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={passwordChange}
-          />
-          <button className="btn-i" type="submit" onClick={login}>
-            Log in
-          </button>
-          <Link className="btn-sign-in" to="./SignUp">
-            not sign?
-          </Link>
-        </form>
-      </div>
-    </BrowserRouter>
+    <div>
+      <form>
+        <input
+          type="name"
+          placeholder="full name"
+          value={name}
+          onChange={nameChange}
+        />
+        <input
+          type="email"
+          placeholder="email"
+          value={email}
+          onChange={emailChange}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={passwordChange}
+        />
+        <button className="btn-i" type="submit" onClick={signUp}>
+          Log in
+        </button>
+      </form>
+    </div>
   );
 };
 
-export default Login;
+export default SignUp;
