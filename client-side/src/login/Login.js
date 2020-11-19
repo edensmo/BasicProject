@@ -54,30 +54,29 @@ const Login = () => {
   };
 
   return (
-    <BrowserRouter>
-      <div>
-        <form>
-          <input
-            type="email"
-            placeholder="email"
-            value={email}
-            onChange={emailChange}
-          />
-          <input
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={passwordChange}
-          />
-          <button className="btn-i" type="submit" onClick={login}>
-            Log in
-          </button>
-          <Link className="btn-sign-in" to="./SignUp">
-            not sign?
-          </Link>
-        </form>
-      </div>
-    </BrowserRouter>
+    <div>
+      <form>
+        <input
+          type="email"
+          placeholder="email"
+          value={email}
+          onChange={emailChange}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={passwordChange}
+        />
+        <button type="submit" onClick={login}>
+          Log in
+        </button>
+
+        <Link className="btn-sign-in" to="/SignUp">
+          not sign?
+        </Link>
+      </form>
+    </div>
   );
 };
 

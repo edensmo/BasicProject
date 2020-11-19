@@ -74,7 +74,7 @@ const SignUp = () => {
           onChange={passwordChange}
         />
         <button className="btn-i" type="submit" onClick={signUp}>
-          Log in
+          SIgn up
         </button>
       </form>
     </div>

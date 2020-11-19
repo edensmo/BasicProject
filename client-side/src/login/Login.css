@@ -1,9 +1,20 @@
+div {
+}
 form {
+  /* display: flex;
+  flex-direction: column; */
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1rem;
+  font-size: inherit;
 }
 
 input {
+  width: 15rem;
+  height: 2rem;
   appearance: none;
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 3px;
@@ -17,7 +28,7 @@ input:focus {
   box-shadow: 0px 0px 8px grey;
 }
 
-.btn-logIn {
+button {
   appearance: none;
   outline: none;
   border: none;
@@ -29,15 +40,16 @@ input:focus {
   font-weight: 700;
   transition: all 0.3s;
   border: 1px solid rgba(0, 0, 0, 0.4);
+  width: 15rem;
 }
 
-.btn-logIn:hover,
-.btn-logIn:focus {
+button:hover,
+button:focus {
   box-shadow: 2px 2px 15px dodgerblue;
   cursor: pointer;
 }
 
-.btn-logIn:active {
+button:active {
   box-shadow: 2px 2px 18px blue;
   background-color: blue;
 }
