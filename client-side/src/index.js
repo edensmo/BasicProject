@@ -20,10 +20,15 @@ const routing = (
         <li>
           <Link to="/Login">Login</Link>
         </li>
+        <li>
+          <Link to="/Board">Login</Link>
+        </li>
       </ul>
       <Route exact path="/" component={App} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={SignUp} />
+      <Route path="/board/Board" component={SignUp} />
+      <Route path="/board/Task" component={SignUp} />
     </div>
   </Router>
 );

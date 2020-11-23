@@ -1,7 +1,10 @@
+import Board from "../board/Board";
+
 const Welcom = () => {
   return (
     <div>
-      <h3>Welcome</h3>
+      <h3>Welcomfsadfsfe</h3>
+      <Board />
     </div>
   );
 };

@@ -15,7 +15,7 @@ const App = () => {
   const loadCats = useCallback(async () => {
     const response = await axios.get(`${myCatServerBaseURL}/cats`);
     const cats = response.data;
-    console.log(cats);
+    // console.log(cats);
     setCats(cats);
   }, []);
 
