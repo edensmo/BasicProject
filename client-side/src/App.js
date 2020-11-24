@@ -1,6 +1,7 @@
 import "./App.css";
 import axios from "axios";
 import React, { useState, useCallback, useEffect } from "react";
+import Board from "./board/Board";
 import CatManager from "./CatManager";
 import Login from "./login/Login";
 import SignUp from "./login/SignUp";
@@ -49,10 +50,10 @@ const App = () => {
   );
 
   return (
-    <div className="u-centered-content u-full-vw u-full-vh">
+    <div className="u-centered-content u-full-vw u-full-vh" dir="rtl">
       {/* <CatManager cats={cats} onCreateNewCat={onCreateNewCat} /> */}
       {/* <Login /> */}
-      <h1>Welcom</h1>
+      <Board />
     </div>
   );
 };
