@@ -1,7 +1,8 @@
-import Member from "./Member";
+import Member from "../member/Member";
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { CardColumns } from "react-bootstrap";
+import "./Members.css";
 
 export default function Members() {
   const myServerBaseURL = "http://localhost:3000";

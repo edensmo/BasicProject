@@ -1,7 +1,7 @@
 import React from "react";
-import Done from "./Done";
-import Members from "./Members";
-import ToDo from "./ToDo";
+import Done from "./done/Done";
+import Members from "./members/Members";
+import ToDo from "./todo/ToDo";
 
 export default function Board() {
   return (

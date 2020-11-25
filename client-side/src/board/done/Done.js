@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
-import Task from "./Task";
+import Task from "../task/Task";
 import "./Done.css";
 
 export default function Done() {

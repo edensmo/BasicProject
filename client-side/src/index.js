@@ -8,10 +8,10 @@ import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 import Login from "./login/Login";
 import SignUp from "./login/SignUp";
 import Board from "./board/Board";
-import ToDo from "./board/ToDo";
-import Task from "./board/Task";
-import Member from "./board/Member";
-import Members from "./board/Members";
+import ToDo from "./board/todo/ToDo";
+import Task from "./board/task/Task";
+import Member from "./board/member/Member";
+import Members from "./board/members/Members";
 
 const routing = (
   <Router>
