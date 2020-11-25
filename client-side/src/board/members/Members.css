@@ -1,0 +1,11 @@
+.rtl {
+  margin-right: 0;
+}
+.box-members {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-start;
+}

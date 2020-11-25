@@ -1,0 +1,15 @@
+.board-ToDo {
+  background-color: rgb(245, 192, 210);
+  width: 70rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.box-tasks {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-start;
+}

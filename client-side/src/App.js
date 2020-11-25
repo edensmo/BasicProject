@@ -1,7 +1,11 @@
 import "./App.css";
 import axios from "axios";
 import React, { useState, useCallback, useEffect } from "react";
+import Board from "./board/Board";
 import CatManager from "./CatManager";
+import Login from "./login/Login";
+import SignUp from "./login/SignUp";
+import { BrowserRouter, Route } from "react-router-dom";
 
 const myCatServerBaseURL = "http://localhost:3000";
 
@@ -12,7 +16,7 @@ const App = () => {
   const loadCats = useCallback(async () => {
     const response = await axios.get(`${myCatServerBaseURL}/cats`);
     const cats = response.data;
-    console.log(cats);
+    // console.log(cats);
     setCats(cats);
   }, []);
 
@@ -46,50 +50,12 @@ const App = () => {
   );
 
   return (
-    <main className="u-centered-content u-full-vw u-full-vh">
-      <CatManager cats={cats} onCreateNewCat={onCreateNewCat} />
-    </main>
+    <div className="u-centered-content u-full-vw u-full-vh">
+      {/* <CatManager cats={cats} onCreateNewCat={onCreateNewCat} /> */}
+      {/* <Login /> */}
+      <Board />
+    </div>
   );
 };
 
 export default App;
-
-// function App() {
-//   const [dogs, setDogs] = useState([]);
-
-//   const loadDogs = useCallback(async () => {
-//     const response = await axios.get(`${server}/cats`);
-//     const dogs = response.data;
-//     setDogs(dogs);
-//   }, []);
-
-//   useEffect(() => {
-//     loadDogs();
-//   }, [loadDogs]);
-
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//         <ul>
-//           {dogs.map((dog) => (
-//             <li key={dog.name}>{dog.name}</li>
-//           ))}
-//         </ul>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;

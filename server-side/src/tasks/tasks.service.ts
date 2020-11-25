@@ -7,56 +7,66 @@ import { Model } from 'mongoose';
 
 @Injectable()
 export class TasksService {
-    constructor(@InjectModel(Task.name) private readonly taskModel: Model<Task>) {}
+  constructor(
+    @InjectModel(Task.name) private readonly taskModel: Model<Task>,
+  ) {}
 
-    getAllTasks() : Task[] {
-        return this.taskModel.find().exec();
-    }
+  getAllTasks(): Task[] {
+    return this.taskModel.find().exec();
+  }
 
-    async create(createTaskDto: CreateTaskDto): Promise<Task> {
-        const createdTask = new this.taskModel(createTaskDto);
-        return createdTask.save();
-      }
+  getToDo(): Task[] {
+    return this.taskModel.find({ status: 'ToDo' }).exec();
+  }
 
-    // getTasksByFilter(filterDto : GetTasksByFilterDto) : Task[] {
-    //     const {status, search} = filterDto;
-    //     let tasks = this.getAllTasks();
+  getDone(): Task[] {
+    return this.taskModel.find({ status: 'DONE' }).exec();
+  }
 
-    //     if(status) {
-    //         tasks = tasks.filter(task => task.status === status)
-    //     }
+  async create(createTaskDto: CreateTaskDto): Promise<Task> {
+    const createdTask = new this.taskModel(createTaskDto);
+    return createdTask.save();
+  }
 
-    //     if(search) {
-    //         tasks = tasks.filter(task => 
-    //             task.title.includes(search) || 
-    //             task.description.includes(search))
-    //     }
-    //     return tasks;
-    // }
+  // getTasksByFilter(filterDto : GetTasksByFilterDto) : Task[] {
+  //     const {status, search} = filterDto;
+  //     let tasks = this.getAllTasks();
 
-    // getTaskById(id: string) : Task {
-    //     return this.tasks.find(task => task.id === id)
-    // }
+  //     if(status) {
+  //         tasks = tasks.filter(task => task.status === status)
+  //     }
 
-    // createTask(title: string, description: string){
-    //     const task : Task = {
-    //         id: uuidv4(),
-    //         title,
-    //         description,
-    //         status: TaskStatus.OPEN
-    //     }
-    //     this.tasks.push(task);
-    //     return task;
-    // }
+  //     if(search) {
+  //         tasks = tasks.filter(task =>
+  //             task.title.includes(search) ||
+  //             task.description.includes(search))
+  //     }
+  //     return tasks;
+  // }
 
-    // deleteTask(id: string) {
-    //     let taskIndex = this.tasks.findIndex(task => task.id === id);
-    //     this.tasks.splice(taskIndex, 1);
-    // }
+  // getTaskById(id: string) : Task {
+  //     return this.tasks.find(task => task.id === id)
+  // }
 
-    // changeStatus(id: string, status: TaskStatus) : Task {
-    //     let task = this.getTaskById(id)
-    //     task.status = status;
-    //     return task;
-    // }
+  // createTask(title: string, description: string){
+  //     const task : Task = {
+  //         id: uuidv4(),
+  //         title,
+  //         description,
+  //         status: TaskStatus.OPEN
+  //     }
+  //     this.tasks.push(task);
+  //     return task;
+  // }
+
+  // deleteTask(id: string) {
+  //     let taskIndex = this.tasks.findIndex(task => task.id === id);
+  //     this.tasks.splice(taskIndex, 1);
+  // }
+
+  // changeStatus(id: string, status: TaskStatus) : Task {
+  //     let task = this.getTaskById(id)
+  //     task.status = status;
+  //     return task;
+  // }
 }

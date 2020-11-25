@@ -60,7 +60,7 @@ export default ({ cats = [], onCreateNewCat }) => {
       <div className="divider" />
       <section className="cat-list-section">
         <p className="my-cat">My cat:</p>
-        <ul>
+        <div className="item">
           {cats.map((cat) => (
             <Cat cat={cat} key={cat.name} />
 
@@ -70,7 +70,7 @@ export default ({ cats = [], onCreateNewCat }) => {
             //   <div>breed: {cat.breed}</div>
             // </li>
           ))}
-        </ul>
+        </div>
       </section>
     </div>
   );

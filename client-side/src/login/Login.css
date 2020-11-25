@@ -1,21 +1,20 @@
-.container {
-  display: grid;
-  justify-content: flex-start;
-  grid-template-columns: 1fr 1px 4fr;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  border-radius: 10px;
+div {
 }
-
-.cat-create-form {
-  padding: 50px;
-}
-
 form {
+  /* display: flex;
+  flex-direction: column; */
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1rem;
+  font-size: inherit;
 }
 
 input {
+  width: 15rem;
+  height: 2rem;
   appearance: none;
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 3px;
@@ -40,6 +39,8 @@ button {
   color: white;
   font-weight: 700;
   transition: all 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  width: 15rem;
 }
 
 button:hover,
@@ -53,22 +54,8 @@ button:active {
   background-color: blue;
 }
 
-.divider {
-  width: 1px;
-  height: 100%;
-  background-color: lightgrey;
-}
-
-.cat-list-section {
-  padding: 30px;
-}
-
-.item {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.my-cat {
-  font-size: 2rem;
+.btn-sign-in {
+  color: burlywood;
+  text-align: center;
+  cursor: pointer;
 }

@@ -1,4 +1,6 @@
 .cat-box {
+  padding: 10px;
+  border-radius: 10%;
   margin: 1rem;
   box-shadow: none;
   background-color: rgb(230, 230, 222);
