@@ -15,7 +15,7 @@ import Members from "./board/Members";
 
 const routing = (
   <Router>
-    <div>
+    <div style={{ textAlign: "right" }}>
       <ul>
         <li>
           <Link to="/">App</Link>

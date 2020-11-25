@@ -1,5 +1,5 @@
-.board-ToDo {
-  background-color: rgb(245, 192, 210);
+.board-Done {
+  background-color: rgba(146, 221, 186, 0.986);
   width: 70rem;
   border-radius: 10px;
   text-align: center;
@@ -7,7 +7,7 @@
 
 .box-tasks {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;

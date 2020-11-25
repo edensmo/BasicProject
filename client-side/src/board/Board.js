@@ -5,11 +5,11 @@ import ToDo from "./ToDo";
 
 export default function Board() {
   return (
-    <div dir="rtl">
-      <ToDo dir="rtl" />
+    <div>
+      <ToDo />
       <br></br>
-      <Members dir="rtl" />
-      |<Done dir="rtl" />
+      <Members />
+      |<Done />
     </div>
   );
 }

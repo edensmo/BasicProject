@@ -1,11 +1,12 @@
 import React from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import "./Member.css";
 
 export default function Member(member) {
   console.log(member);
   return (
-    <div dir="rtl">
-      <Card style={{ width: "18rem" }} className="rtl">
+    <div>
+      <Card style={{ width: "18rem", marginRight: "1" }}>
         <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
         <Card.Body>
           <Card.Title>{member.name}</Card.Title>

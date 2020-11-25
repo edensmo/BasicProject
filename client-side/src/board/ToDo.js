@@ -21,13 +21,14 @@ export default function ToDo() {
   return (
     <div className="board-ToDo">
       <h2> ToDo</h2>
-      {/* <div className="box-tasks"> */}{" "}
-      <CardColumns>
+      <div className="box-tasks">
+        {" "}
+        {/* <CardColumns> */}
         {tasks.map((task) => (
           <Task key={task._id} id={task._id} desc={task.description} />
         ))}
-      </CardColumns>
-      {/* </div> */}
+        {/* </CardColumns> */}
+      </div>
     </div>
   );
 }

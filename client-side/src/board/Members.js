@@ -19,10 +19,12 @@ export default function Members() {
   }, [loadMembers]);
 
   return (
-    <CardColumns dir="rtl">
+    // <CardColumns>
+    <div className="box-members">
       {members.map((member) => (
         <Member key={member._id} name={member.name} />
       ))}
-    </CardColumns>
+    </div>
+    // </CardColumns>
   );
 }

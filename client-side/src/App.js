@@ -50,7 +50,7 @@ const App = () => {
   );
 
   return (
-    <div className="u-centered-content u-full-vw u-full-vh" dir="rtl">
+    <div className="u-centered-content u-full-vw u-full-vh">
       {/* <CatManager cats={cats} onCreateNewCat={onCreateNewCat} /> */}
       {/* <Login /> */}
       <Board />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import Task from "./Task";
+import "./Done.css";
 
 export default function Done() {
   const myServerBaseURL = "http://localhost:3000";
@@ -18,7 +19,7 @@ export default function Done() {
   }, [loadTask]);
 
   return (
-    <div className>
+    <div className="board-Done">
       <h2> Done</h2>
       {tasks.map((task) => (
         <Task key={task._id} id={task._id} desc={task.description} />

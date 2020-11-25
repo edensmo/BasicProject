@@ -1,11 +1,7 @@
-.board-ToDo {
-  background-color: rgb(245, 192, 210);
-  width: 70rem;
-  border-radius: 10px;
-  text-align: center;
+.rtl {
+  margin-right: 0;
 }
-
-.box-tasks {
+.box-members {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
