@@ -17,13 +17,13 @@ const routing = (
   <Router>
     <div style={{ textAlign: "right" }}>
       <ul>
-        <li>
+        <li style={{ listStyleType: "none" }}>
           <Link to="/">App</Link>
         </li>
-        <li>
+        <li style={{ listStyleType: "none" }}>
           <Link to="/SignUp">SignUp</Link>
         </li>
-        <li>
+        <li style={{ listStyleType: "none" }}>
           <Link to="/Login">Login</Link>
         </li>
       </ul>

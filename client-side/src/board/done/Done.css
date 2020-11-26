@@ -3,6 +3,7 @@
   width: 70rem;
   border-radius: 10px;
   text-align: center;
+  padding: 1rem;
 }
 
 .box-tasks {
@@ -12,4 +13,10 @@
   justify-content: space-around;
   align-items: center;
   align-content: flex-start;
+}
+
+.addTask {
+  text-align: left;
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }

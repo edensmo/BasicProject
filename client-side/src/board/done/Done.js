@@ -21,9 +21,14 @@ export default function Done() {
   return (
     <div className="board-Done">
       <h2> Done</h2>
-      {tasks.map((task) => (
-        <Task key={task._id} id={task._id} desc={task.description} />
-      ))}
+      <div className="box-tasks">
+        {tasks.map((task) => (
+          <Task key={task._id} id={task._id} desc={task.description} />
+        ))}
+      </div>
+      <h3 className="addTask" href="#">
+        הוסף משימה &#43;
+      </h3>
     </div>
   );
 }
