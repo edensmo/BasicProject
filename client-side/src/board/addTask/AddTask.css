@@ -1,0 +1,19 @@
+.addTask {
+  text-align: left;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.form-task {
+  width: auto;
+  text-align: right;
+}
+
+.form-group {
+  width: 21rem;
+}
+
+.input-text {
+  text-align: right;
+}
