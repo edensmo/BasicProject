@@ -29,6 +29,9 @@ export default function ToDo() {
         ))}
         {/* </CardColumns> */}
       </div>
+      <h3 className="addTask" href="#">
+        הוסף משימה &#43;
+      </h3>
     </div>
   );
 }
