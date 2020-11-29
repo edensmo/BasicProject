@@ -5,7 +5,14 @@
   cursor: pointer;
 }
 
+.modal-header {
+  display: block;
+  text-align: center;
+}
+.modal {
+}
 .form-task {
+  height: auto;
   width: auto;
   text-align: right;
 }
@@ -16,4 +23,12 @@
 
 .input-text {
   text-align: right;
+}
+
+.modal-flooter {
+  text-align: center;
+  border-top: none;
+}
+.btn {
+  width: 10rem;
 }
