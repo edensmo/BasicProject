@@ -3,6 +3,7 @@ import axios from "axios";
 import Task from "../task/Task";
 import "./ToDo.css";
 import { CardColumns } from "react-bootstrap";
+import AddTask from "../addTask/AddTask";
 export default function ToDo() {
   const myServerBaseURL = "http://localhost:3000";
 
@@ -29,9 +30,10 @@ export default function ToDo() {
         ))}
         {/* </CardColumns> */}
       </div>
-      <h3 className="addTask" href="#">
+      {/* <h3 className="addTask" href="#" onClick={() => <AddTask />}>
         הוסף משימה &#43;
-      </h3>
+      </h3> */}
+      <AddTask />
     </div>
   );
 }

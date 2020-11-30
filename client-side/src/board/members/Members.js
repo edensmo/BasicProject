@@ -9,7 +9,7 @@ export default function Members() {
   const [members, setMembers] = useState([]);
 
   const loadMembers = useCallback(async () => {
-    const response = await axios.get(`${myServerBaseURL}/member`);
+    const response = await axios.get(`${myServerBaseURL}/members`);
     const members = response.data;
     console.log(members);
     setMembers(members);
