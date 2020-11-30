@@ -23,7 +23,12 @@ export default function Done() {
       <h2> Done</h2>
       <div className="box-tasks">
         {tasks.map((task) => (
-          <Task key={task._id} id={task._id} desc={task.description} />
+          <Task
+            key={task._id}
+            id={task._id}
+            desc={task.description}
+            name={task.name}
+          />
         ))}
       </div>
       <h3 className="addTask" href="#">

@@ -26,7 +26,12 @@ export default function ToDo() {
         {" "}
         {/* <CardColumns> */}
         {tasks.map((task) => (
-          <Task key={task._id} id={task._id} desc={task.description} />
+          <Task
+            key={task._id}
+            id={task._id}
+            desc={task.description}
+            name={task.name}
+          />
         ))}
         {/* </CardColumns> */}
       </div>

@@ -28,6 +28,7 @@
 .modal-flooter {
   text-align: center;
   border-top: none;
+  display: inline-block;
 }
 .btn {
   width: 10rem;

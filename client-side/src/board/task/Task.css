@@ -1,0 +1,28 @@
+.modal-header {
+  display: block;
+  text-align: center;
+}
+.modal {
+}
+.form-task {
+  height: auto;
+  width: auto;
+  text-align: right;
+}
+
+.form-group {
+  width: 21rem;
+}
+
+.input-text {
+  text-align: right;
+}
+
+.modal-footer {
+  text-align: center;
+  border-top: none;
+  display: inline-block;
+}
+.btn {
+  width: 10rem;
+}
