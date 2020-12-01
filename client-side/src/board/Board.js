@@ -9,7 +9,8 @@ export default function Board() {
       <ToDo />
       <br></br>
       <Members />
-      |<Done />
+      <br></br>
+      <Done />
     </div>
   );
 }

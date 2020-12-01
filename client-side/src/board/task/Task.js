@@ -91,6 +91,7 @@ export default function Task(task) {
                 onChange={statusChange}
                 as="select"
               >
+                <option>בחר</option>
                 <option>ToDo</option>
                 <option>Doing</option>
                 <option>DONE</option>
