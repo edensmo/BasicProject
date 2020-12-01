@@ -23,8 +23,12 @@ export class TasksService {
     return this.taskModel.find({ status: 'DONE' }).exec();
   }
 
-  getDoingOfMember(idMember: any): Task[] {
-    return this.taskModel.find({ _id: idMember, status: 'Doing' });
+  getDoingOfMember(idMember: string): Task[] {
+    const tasks = this.taskModel
+      .find({ _id: idMember, status: 'Doing' })
+      .exec();
+    console.log(tasks);
+    return tasks;
   }
 
   async create(createTaskDto: CreateTaskDto): Promise<Task> {
