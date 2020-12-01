@@ -13,6 +13,9 @@ export class Task {
 
   @Prop()
   status: string;
+
+  @Prop()
+  memberId: string;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);
