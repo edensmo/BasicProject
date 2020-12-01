@@ -31,6 +31,11 @@ export class TasksController {
     return this.tasksService.getDone();
   }
 
+  @Get('/Doing/:id')
+  getDoingOfId(@Param('id') id: string): Task[] {
+    return this.tasksService.getDoingOfMember(id);
+  }
+
   @Post()
   async create(@Body() createTaskDto: CreateTaskDto) {
     await this.tasksService.create(createTaskDto);
