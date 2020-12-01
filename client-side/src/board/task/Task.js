@@ -1,3 +1,4 @@
+import Axios from "axios";
 import React, { useCallback, useState } from "react";
 import { Button, Card, Form, Modal } from "react-bootstrap";
 import "./Task.css";
@@ -23,9 +24,33 @@ export default function Task(task) {
     setStatus(event.target.value);
   }, []);
 
+  const myServerURL = "http://localhost:3000/tasks/update";
+
+  const update = async () => {
+    const data = {
+      id: task.id,
+      name: name,
+      description: desc,
+      status: status,
+    };
+
+    await Axios.post(`${myServerURL}`, data)
+      .then()
+      .catch((err) => {
+        console.log(err);
+      });
+    handleClose();
+    window.location.reload();
+  };
+
   return (
     <div className="box-tasks">
-      <Card bg="gray" style={{ width: "18rem" }} onClick={handleShow}>
+      <Card
+        className="card-task"
+        bg="gray"
+        style={{ width: "18rem" }}
+        onClick={handleShow}
+      >
         <Card.Body>
           <Card.Text>{task.name}</Card.Text>
         </Card.Body>
@@ -77,7 +102,7 @@ export default function Task(task) {
           <Button variant="secondary" onClick={handleClose}>
             סגור
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={update}>
             שמור שינויים
           </Button>
         </Modal.Footer>

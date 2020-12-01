@@ -36,6 +36,11 @@ export class TasksController {
     await this.tasksService.create(createTaskDto);
   }
 
+  @Post('/update')
+  async updateTask(@Body() task: any) {
+    await this.tasksService.update(task);
+  }
+
   // @Get('/byFilter')
   // getTasks(@Query() filterDto : GetTasksByFilterDto) : Task []{
   //     if (Object.keys(filterDto).length){

@@ -28,6 +28,21 @@ export class TasksService {
     return createdTask.save();
   }
 
+  update(taskUpdate: any): Promise<Task> {
+    console.log(taskUpdate);
+    console.log(taskUpdate.id);
+    const task = this.taskModel.updateOne(
+      { _id: taskUpdate.id },
+      {
+        name: taskUpdate.name,
+        description: taskUpdate.description,
+        status: taskUpdate.status,
+      },
+    );
+    // console.log(task);
+    return task;
+  }
+
   // getTasksByFilter(filterDto : GetTasksByFilterDto) : Task[] {
   //     const {status, search} = filterDto;
   //     let tasks = this.getAllTasks();
