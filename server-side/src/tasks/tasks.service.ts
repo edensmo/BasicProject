@@ -24,10 +24,7 @@ export class TasksService {
   }
 
   getDoingOfMember(idMember: string): Task[] {
-    const tasks = this.taskModel
-      .find({ _id: idMember, status: 'Doing' })
-      .exec();
-    console.log(tasks);
+    const tasks = this.taskModel.find({ memberId: idMember }).exec();
     return tasks;
   }
 

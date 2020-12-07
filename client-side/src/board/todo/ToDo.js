@@ -8,10 +8,11 @@ export default function ToDo() {
   const myServerBaseURL = "http://localhost:3000";
 
   const [tasks, setTasks] = useState([]);
+
   const loadTask = useCallback(async () => {
     const response = await axios.get(`${myServerBaseURL}/tasks/ToDo`);
     const tasks = response.data;
-    console.log(tasks);
+    // console.log(tasks);
     setTasks(tasks);
   }, []);
 

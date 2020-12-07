@@ -1,9 +1,24 @@
-import React from "react";
+import Axios from "axios";
+import React, { useCallback, useEffect, useState } from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
-// import "./Members.css";
 
 export default function Member(member) {
-  console.log(member);
+  const myServerBaseURL = "http://localhost:3000";
+  const [tasksMember, setTasksMember] = useState([]);
+
+  const loadTAsks = useCallback(async () => {
+    const res = await Axios.get(`${myServerBaseURL}/tasks/Doing/${member.id}`);
+
+    setTasksMember(res.data);
+    console.log("res.data", res.data);
+
+    console.log("taskMember", tasksMember);
+  }, []);
+
+  useEffect(() => {
+    loadTAsks();
+  }, [loadTAsks]);
+
   return (
     <div>
       <Card style={{ width: "18rem", marginRight: "1" }}>
@@ -16,9 +31,12 @@ export default function Member(member) {
           </Card.Text> */}
         </Card.Body>
         <ListGroup className="list-group-flush">
-          <ListGroupItem>server</ListGroupItem>
+          {tasksMember.map((task) => {
+            <ListGroupItem key={task._id}>{task.name}a</ListGroupItem>;
+          })}
+          {/* <ListGroupItem>server</ListGroupItem>
           <ListGroupItem>DB</ListGroupItem>
-          <ListGroupItem>install boostrap</ListGroupItem>
+          <ListGroupItem>install boostrap</ListGroupItem> */}
         </ListGroup>
         <Card.Body>
           <Card.Link href="#">הוסף משימה &#43;</Card.Link>

@@ -10,7 +10,7 @@ export default function Done() {
   const loadTask = useCallback(async () => {
     const response = await axios.get(`${myServerBaseURL}/tasks/DONE`);
     const tasks = response.data;
-    console.log(tasks);
+    // console.log(tasks);
     setTasks(tasks);
   }, []);
 
