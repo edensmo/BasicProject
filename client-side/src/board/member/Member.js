@@ -8,17 +8,16 @@ export default function Member(member) {
 
   const loadTAsks = useCallback(async () => {
     const res = await Axios.get(`${myServerBaseURL}/tasks/Doing/${member.id}`);
-
-    setTasksMember(res.data);
-    console.log("res.data", res.data);
-
-    console.log("taskMember", tasksMember);
+    const result = res.data;
+    setTasksMember(result);
+    // console.log("res.dataa", res.data);
+    // console.log("taskMember", tasksMember);
   }, []);
 
   useEffect(() => {
     loadTAsks();
-  }, [loadTAsks]);
-
+  }, []);
+  const list = [1, 2, 3];
   return (
     <div>
       <Card style={{ width: "18rem", marginRight: "1" }}>
@@ -32,11 +31,8 @@ export default function Member(member) {
         </Card.Body>
         <ListGroup className="list-group-flush">
           {tasksMember.map((task) => {
-            <ListGroupItem key={task._id}>{task.name}a</ListGroupItem>;
+            return <ListGroupItem key={task._id}>{task.name}</ListGroupItem>;
           })}
-          {/* <ListGroupItem>server</ListGroupItem>
-          <ListGroupItem>DB</ListGroupItem>
-          <ListGroupItem>install boostrap</ListGroupItem> */}
         </ListGroup>
         <Card.Body>
           <Card.Link href="#">הוסף משימה &#43;</Card.Link>

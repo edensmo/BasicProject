@@ -1,5 +1,5 @@
 import Axios from "axios";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Button, Card, Form, Modal } from "react-bootstrap";
 import "./Task.css";
 
@@ -8,6 +8,9 @@ export default function Task(task) {
   const [name, setName] = useState(task.name);
   const [desc, setDesc] = useState(task.desc);
   const [status, setStatus] = useState(task.status);
+  const [memberId, setMemberId] = useState(task.memberId);
+  const [members, setMembers] = useState([]);
+  const myServerURL = "http://localhost:3000";
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -24,7 +27,20 @@ export default function Task(task) {
     setStatus(event.target.value);
   }, []);
 
-  const myServerURL = "http://localhost:3000/tasks/update";
+  const memberIdChange = useCallback((event) => {
+    setMemberId(event.target.value);
+  }, []);
+
+  //Get all members
+  const GetAllMembers = useCallback(async () => {
+    const res = await Axios.get(`${myServerURL}/members`);
+    // console.log(res);
+    setMembers(res.data);
+  }, []);
+
+  useEffect(() => {
+    GetAllMembers();
+  }, []);
 
   const update = async () => {
     const data = {
@@ -32,9 +48,10 @@ export default function Task(task) {
       name: name,
       description: desc,
       status: status,
+      memberId: memberId,
     };
 
-    await Axios.post(`${myServerURL}`, data)
+    await Axios.post(`${myServerURL}/tasks/update`, data)
       .then()
       .catch((err) => {
         console.log(err);
@@ -95,6 +112,20 @@ export default function Task(task) {
                 <option>ToDo</option>
                 <option>Doing</option>
                 <option>DONE</option>
+              </Form.Control>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>באחריות:</Form.Label>
+              <Form.Control
+                className="input-text"
+                onChange={memberIdChange}
+                value={memberId}
+                as="select"
+              >
+                <option>בחר</option>
+                {members.map((member) => {
+                  return <option key={member._id}>{member._id}</option>;
+                })}
               </Form.Control>
             </Form.Group>
           </Form>
